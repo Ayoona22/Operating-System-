@@ -26,14 +26,17 @@ void main(){
     }printf("\n");
     for(int i=0;i<j;i++){
         printf("%d    ",a[i]);
-    }for(int i=0;i<n;i++){
+    }int avwt=0,avtat=0;
+    for(int i=0;i<n;i++){
         p[i].tat=p[i].ct-p[i].at;
+        avtat+=p[i].tat;
         p[i].wt=p[i].tat-p[i].bt;
+        avwt+=p[i].wt;
         p[i].rt=a[i]-p[i].at;
     }printf("\nPROCESS\tARRIVAL\tBURST TURNAROUND WAITING COMPLETION RESPONCE\n");
     for(int i=0;i<n;i++){
         printf("P%d\t%d\t%d \t%d\t  %d \t  %d\t\t%d\n",p[i].id,p[i].at,p[i].bt,p[i].tat,p[i].wt,p[i].ct,p[i].rt);
-    }
+    }printf("Average Waiting Time : %d\nAverage Turnaround Time : %d",avwt,avtat);
 }
 
 /*
